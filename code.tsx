@@ -38,15 +38,22 @@ const ProfileScreen = () => {
       // Here, you can parse the URL to determine the action
       // For example, navigate to a specific part of your app or display a message
     };
+        
+  const extractTokenFromUrl = (url) => {
+      const tokenParam = url.match(/token=([^&]+)/);
+      return tokenParam ? tokenParam[1] : null;
+    };
+
     const handleDeepLink = (event) => {
       console.log("Incoming URL:", event.url);
       // Parse the URL and extract the token parameter
-      const url = new URL(event.url);
-      console.log(url)
+  
+      const token = extractTokenFromUrl(event.url);
       if (token) {
         console.log("Extracted Token:", token);
         // Here you can set the token in your app's state or do other actions
       }
+  
     };
 
     // Listen for incoming links
