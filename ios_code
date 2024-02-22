@@ -1,0 +1,10 @@
+iOS Configuration
+For iOS, you have two options: URL Schemes and Universal Links. URL Schemes are easier to set up but less secure and versatile than Universal Links. I’ll cover URL Schemes here.
+
+Modify Info.plist for URL Schemes:
+Open your iOS project in Xcode (ios/YourProjectName.xcodeproj or ios/YourProjectName.workspace if you're using Cocoapods).
+Click on your project in the Project Navigator, then select your app's target.
+Go to the Info tab, and look for URL Types.
+Click the + button to add a new URL Type.
+Enter a unique identifier (reverse DNS format is a common convention, like com.yourcompany.gxc) and your URL Scheme (gxc).
+Testing Deep Linking
